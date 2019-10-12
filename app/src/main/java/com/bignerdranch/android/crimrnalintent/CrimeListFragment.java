@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.Format;
 import java.util.List;
 
 import javax.security.auth.callback.Callback;
@@ -154,7 +155,7 @@ public class CrimeListFragment extends Fragment {
         public void bind(Crime crime){
             mCrime = crime;
             mTitleTextView.setText(mCrime.getTitle());
-            mDateTextView.setText(android.text.format.DateFormat.format("EEEE, MMM dd, yyyy",mCrime.getDate()));
+            mDateTextView.setText(android.text.format.DateFormat.format("EEEE, dd MMM, yyyy",mCrime.getDate()));
             mSolvedImageView.setVisibility(crime.isSolved() ? View.VISIBLE : View.GONE);
         }
         @Override
